@@ -83,7 +83,7 @@ for x in range(1, base):
             primes_found.append(x)
 
 current_vicinity = base
-while len(coprimes) < primes_to_find:
+while len(primes_found) < primes_to_find:
     for x in coprimes:
         check = current_vicinity + x
         is_prime = True
@@ -92,10 +92,10 @@ while len(coprimes) < primes_to_find:
                 is_prime = False
                 break
         if is_prime:
-            prines_found.append(check)
+            primes_found.append(check)
     current_vicinity += base
 
 stop = timeit.default_timer()
 
 print("Time: ", stop - start)
-print("Total primes: ", total_primes)
+print("Total primes: ", len(primes_found))
